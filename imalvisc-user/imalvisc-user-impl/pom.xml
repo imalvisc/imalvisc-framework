@@ -2,19 +2,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>imalvisc-user</artifactId>
+        <groupId>com.imalvisc.framework</groupId>
+        <version>1.0</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.imalvisc.framework</groupId>
-    <artifactId>imalvisc-framework</artifactId>
-    <version>1.0</version>
-    <modules>
-        <module>imalvisc-dependencies</module>
-        <module>imalvisc-common</module>
-        <module>imalvisc-order</module>
-        <module>imalvisc-gateway</module>
-        <module>imalvisc-user</module>
-    </modules>
-    <packaging>pom</packaging>
+    <artifactId>imalvisc-user-impl</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.imalvisc.framework</groupId>
+            <artifactId>imalvisc-user-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>

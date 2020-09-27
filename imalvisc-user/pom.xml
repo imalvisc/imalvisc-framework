@@ -9,13 +9,25 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>imalvisc-common</artifactId>
+    <artifactId>imalvisc-user</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>imalvisc-user-api</module>
+        <module>imalvisc-user-impl</module>
+    </modules>
 
     <dependencies>
-        <!-- lombok -->
+        <!-- imalvisc common -->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>com.imalvisc.framework</groupId>
+            <artifactId>imalvisc-common</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- 健康检查 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
         <!-- spring mvc -->
@@ -24,10 +36,16 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- 单元测试 -->
+        <!-- nacos discovery -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <!-- nacos configuration -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
 
         <!-- open feign -->
@@ -48,6 +66,5 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
 
 </project>

@@ -1,0 +1,10 @@
+# 服务端口
+server:
+  port: 8082
+
+# 开启所有健康检查断点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

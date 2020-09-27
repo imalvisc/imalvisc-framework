@@ -19,6 +19,13 @@
             <version>1.0</version>
         </dependency>
 
+        <!-- user api -->
+        <dependency>
+            <groupId>com.imalvisc.framework</groupId>
+            <artifactId>imalvisc-user-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+
         <!-- 健康检查 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -37,10 +44,22 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
-        <!-- nacos config -->
+        <!-- nacos configuration -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+        <!-- open feign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <!-- okhttp -->
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-okhttp</artifactId>
         </dependency>
     </dependencies>
 
