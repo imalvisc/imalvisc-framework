@@ -1,0 +1,21 @@
+server:
+  # 服务端口
+  port: 8080
+spring:
+  cloud:
+    # gateway配置
+    gateway:
+      discovery:
+        locator:
+          # 开启从注册中心获取服务功能
+          enabled: true
+      # gateway路由
+      routes:
+        - id: order
+          uri: lb://imalvisc-order/
+          predicates:
+            # 拦截/api/order/**的请求，转发到imalvisc-order服务
+            - Path=/api/order/**
+          filters:
+            # 过滤1个路径前缀
+            - StripPrefix=1

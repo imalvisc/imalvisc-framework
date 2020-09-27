@@ -11,6 +11,7 @@
         <module>imalvisc-dependencies</module>
         <module>imalvisc-common</module>
         <module>imalvisc-order</module>
+        <module>imalvisc-gateway</module>
     </modules>
     <packaging>pom</packaging>
 

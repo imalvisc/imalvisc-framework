@@ -1,0 +1,11 @@
+spring:
+  application:
+    # 服务名称
+    name: imalvisc-gateway
+  cloud:
+    # nacos配置
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        file-extension: properties
+        group: DEFAULT_GROUP
