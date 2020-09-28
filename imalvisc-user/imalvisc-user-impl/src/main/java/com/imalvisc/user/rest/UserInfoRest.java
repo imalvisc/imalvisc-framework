@@ -2,6 +2,10 @@ package com.imalvisc.user.rest;
 
 import com.alibaba.fastjson.JSONObject;
 import com.imalvisc.user.api.UserInfoApi;
+import com.imalvisc.user.model.dto.CreateUserDTO;
+import com.imalvisc.user.model.vo.CreateUserVO;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -14,10 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserInfoRest implements UserInfoApi {
 
     @Override
-    public JSONObject create() {
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("userId", "123456");
-        return jsonObject;
+    public CreateUserVO create(CreateUserDTO createUserDTO) {
+        return CreateUserVO.builder()
+                .userId("123456")
+                .build();
     }
 
 }

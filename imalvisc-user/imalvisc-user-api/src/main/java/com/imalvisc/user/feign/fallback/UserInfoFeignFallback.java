@@ -1,7 +1,8 @@
 package com.imalvisc.user.feign.fallback;
 
-import com.alibaba.fastjson.JSONObject;
 import com.imalvisc.user.api.UserInfoApi;
+import com.imalvisc.user.model.dto.CreateUserDTO;
+import com.imalvisc.user.model.vo.CreateUserVO;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,9 +13,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class UserInfoFeignFallback implements UserInfoApi {
-
-    public JSONObject create() {
+    @Override
+    public CreateUserVO create(CreateUserDTO createUserDTO) {
         return null;
     }
-
 }

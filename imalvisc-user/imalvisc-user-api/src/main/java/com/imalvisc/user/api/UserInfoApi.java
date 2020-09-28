@@ -1,12 +1,15 @@
 package com.imalvisc.user.api;
 
-import com.alibaba.fastjson.JSONObject;
 import com.imalvisc.common.feign.FeignConfiguration;
 import com.imalvisc.user.feign.factory.UserInfoFeignFallbackFactory;
+import com.imalvisc.user.model.dto.CreateUserDTO;
+import com.imalvisc.user.model.vo.CreateUserVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * 用户信息api接口
@@ -30,6 +33,6 @@ public interface UserInfoApi {
      */
     @ApiOperation(value = "创建用户")
     @PostMapping(value = API_PREFIX + "/create")
-    JSONObject create();
+    CreateUserVO create(@RequestBody @Validated CreateUserDTO createUserDTO);
 
 }
