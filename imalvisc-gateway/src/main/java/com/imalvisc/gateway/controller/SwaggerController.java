@@ -11,11 +11,13 @@ import springfox.documentation.swagger.web.*;
 import java.util.Optional;
 
 /**
+ * swagger controller，聚合微服务swagger文档
+ *
  * @author imalvisc
- * @version Id: SwaggerHandler.java, v 0.1 2020-09-28 09:59 imalvisc Exp $$
+ * @version Id: SwaggerController.java, v 0.1 2020-09-28 09:59 imalvisc Exp $$
  */
 @RestController
-public class SwaggerHandler {
+public class SwaggerController {
 
     @Autowired(required = false)
     private SecurityConfiguration securityConfiguration;
@@ -23,15 +25,13 @@ public class SwaggerHandler {
     @Autowired(required = false)
     private UiConfiguration uiConfiguration;
 
-    private final SwaggerResourcesProvider swaggerResources;
-
     @Autowired
-    public SwaggerHandler(SwaggerResourcesProvider swaggerResources) {
-        this.swaggerResources = swaggerResources;
-    }
+    private SwaggerResourcesProvider swaggerResourcesProvider;
 
     /**
      * Swagger安全配置，支持oauth和apiKey设置
+     *
+     * @return
      */
     @GetMapping("/swagger-resources/configuration/security")
     public Mono<ResponseEntity<SecurityConfiguration>> securityConfiguration() {
@@ -41,6 +41,8 @@ public class SwaggerHandler {
 
     /**
      * Swagger UI配置
+     *
+     * @return
      */
     @GetMapping("/swagger-resources/configuration/ui")
     public Mono<ResponseEntity<UiConfiguration>> uiConfiguration() {
@@ -50,10 +52,12 @@ public class SwaggerHandler {
 
     /**
      * Swagger资源配置，微服务中这各个服务的api-docs信息
+     *
+     * @return
      */
     @GetMapping("/swagger-resources")
     public Mono<ResponseEntity> swaggerResources() {
-        return Mono.just((new ResponseEntity<>(swaggerResources.get(), HttpStatus.OK)));
+        return Mono.just((new ResponseEntity<>(swaggerResourcesProvider.get(), HttpStatus.OK)));
     }
 
 }
