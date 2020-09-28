@@ -9,7 +9,6 @@ import org.springframework.http.client.OkHttp3ClientHttpRequestFactory;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.lang.NonNull;
-import org.springframework.lang.NonNullApi;
 import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 /**
- * Rest客户端配置类
+ * rest客户端配置类
  *
  * @author imalvisc
  * @version Id: RestTemplateConfiguration.java, v 0.1 2020-09-27 17:02 imalvisc Exp $$

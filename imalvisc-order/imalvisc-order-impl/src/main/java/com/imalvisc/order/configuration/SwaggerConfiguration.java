@@ -23,7 +23,7 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.imalvisc.order.api"))
+                .apis(RequestHandlerSelectors.basePackage("com.imalvisc.order.rest"))
                 .paths(PathSelectors.any())
                 .build();
     }

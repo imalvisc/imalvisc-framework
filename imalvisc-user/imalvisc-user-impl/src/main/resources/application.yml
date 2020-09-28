@@ -8,3 +8,26 @@ management:
     web:
       exposure:
         include: '*'
+
+# feign配置
+feign:
+  httpclient:
+    # 关闭httpclient客户端
+    enabled: false
+    # 连接超时时间
+    connection-timeout: 5000
+    # 重试连接超时时间
+    connection-timer-repeat: 5000
+    # 关闭ssl验证
+    disable-ssl-validation: true
+    # 最大连接数
+    max-connections: 300
+    # 单个路由最大连接数
+    max-connections-per-route: 50
+    # 线程存活时间
+    time-to-live: 900
+    # 线程存活时间单位
+    time-to-live-unit: seconds
+  okhttp:
+    # 开启okhttp客户端，okhttp客户端可以解析feign.httpclient配置参数
+    enabled: true
