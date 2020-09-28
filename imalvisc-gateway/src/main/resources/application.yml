@@ -19,7 +19,7 @@ spring:
             - Path=/api/order/**
           filters:
             # 过滤1个路径前缀
-            - StripPrefix=1
+            - StripPrefix=2
         #用户服务请求转发
         - id: user
           uri: lb://imalvisc-user/
@@ -28,4 +28,4 @@ spring:
             - Path=/api/user/**
           filters:
             # 过滤1个路径前缀
-            - StripPrefix=1
+            - StripPrefix=2

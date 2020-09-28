@@ -1,0 +1,40 @@
+package com.imalvisc.order.configuration;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+
+/**
+ * swagger文档配置类
+ *
+ * @author imalvisc
+ * @version Id: SwaggerConfiguration.java, v 0.1 2020-09-28 09:43 imalvisc Exp $$
+ */
+@Configuration
+public class SwaggerConfiguration {
+
+    @Bean
+    public Docket createRestApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.imalvisc.order.api"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title("订单服务api文档")
+                .description("订单服务api文档")
+                .contact("imalvisc")
+                .version("1.0")
+                .build();
+    }
+
+}

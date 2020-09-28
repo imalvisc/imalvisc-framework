@@ -19,6 +19,7 @@
         <spring.cloud.version>Hoxton.SR3</spring.cloud.version>
         <spring.cloud.alibaba.version>2.2.1.RELEASE</spring.cloud.alibaba.version>
         <lombok.version>1.18.12</lombok.version>
+        <knife4j.version>2.0.5</knife4j.version>
     </properties>
 
     <dependencyManagement>
@@ -55,6 +56,20 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- knife4j micro -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+
+            <!-- knife4j -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
