@@ -12,7 +12,7 @@ spring:
       # gateway路由
       routes:
         #订单服务请求转发
-        - id: order
+        - id: imalvisc-order
           uri: lb://imalvisc-order/
           predicates:
             # 拦截/api/order/**的请求，转发到imalvisc-order服务
@@ -21,7 +21,7 @@ spring:
             # 过滤1个路径前缀
             - StripPrefix=2
         #用户服务请求转发
-        - id: user
+        - id: imalvisc-user
           uri: lb://imalvisc-user/
           predicates:
             # 拦截/api/user/**的请求，转发到imalvisc-user服务
