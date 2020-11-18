@@ -29,7 +29,7 @@ feign:
     # 线程存活时间单位
     time-to-live-unit: seconds
   okhttp:
-    # 开启okhttp客户端，okhttp客户端可以解析feign.httpclient配置参数1
+    # 开启okhttp客户端，okhttp客户端可以解析feign.httpclient配置参数3
     enabled: true
 
 
