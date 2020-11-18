@@ -31,3 +31,4 @@ feign:
   okhttp:
     # 开启okhttp客户端，okhttp客户端可以解析feign.httpclient配置参数
     enabled: true
+
